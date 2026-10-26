@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>E-book gratuito: Guia do TEP | Ped Talks</title>
+<meta name="description" content="Ganhe o e-book gratuito Guia do TEP: o que é o Título de Especialista em Pediatria, como é a prova e por onde começar a sua preparação para 2027.">
+<meta property="og:title" content="E-book gratuito: Guia do TEP | Ped Talks">
+<meta property="og:description" content="O primeiro passo rumo ao seu Título de Especialista em Pediatria. Preencha o formulário e receba grátis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gtalksmkt.github.io/captura-ebook-tep/">
+<meta property="og:image" content="https://gtalksmkt.github.io/captura-ebook-tep/img/og-ebook-tep.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#040405">
+<link rel="icon" href="img/logo-pedtalks.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900&display=swap" rel="stylesheet">
+
+<!--
+  Página de captura do e-book gratuito "Guia do TEP" (Ped Talks).
+  Mesmo sistema visual da landing do Preparatório TEP: preto #040405 + azul #0074F2, DM Sans.
+
+  ⚠️ ANTES DE PUBLICAR: preencher CONFIG.ENDPOINT no <script> (para onde vão os leads).
+     Sem ele a página funciona, mas os dados não são enviados. Ver README.md.
+-->
+
+<style>
+/* ═══ RESET & TOKENS ══════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  color-scheme:dark;
+  --black:#040405;
+  --white:#F6F6F7;
+  --gl:#C5C6CC;
+  --gm:#8A8D96;
+  --blue:#0074F2;          /* cor de marca — CTA, números, destaques grandes */
+  --blue-l:#5AA6FF;        /* texto pequeno e links: contraste seguro no preto */
+  --red:#FF6B7F;
+  --gbd:rgba(255,255,255,.12);
+  --glow:rgba(0,116,242,.38);
+  --font:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --card:linear-gradient(170deg,rgba(17,21,31,.94),rgba(8,9,13,.96));
+  --card-bd:linear-gradient(160deg,rgba(90,166,255,.75),rgba(255,255,255,.07) 36%,rgba(255,255,255,.04) 64%,rgba(0,116,242,.6));
+}
+html{scroll-behavior:smooth}
+html.lock{overflow:hidden}
+body{background:var(--black);color:var(--white);font-family:var(--font);font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ol,ul{list-style:none}
+::selection{background:var(--blue);color:#fff}
+:focus-visible{outline:2px solid var(--blue-l);outline-offset:3px}
+
+/* ═══ BUTTONS ═════════════════════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;font-family:var(--font);font-weight:700;font-size:16px;border-radius:999px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn svg{flex-shrink:0}
+.btn-primary{background:linear-gradient(135deg,var(--blue),#2A8CFF);color:#fff;box-shadow:0 0 28px var(--glow),0 6px 22px rgba(0,0,0,.45)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(0,116,242,.6),0 10px 34px rgba(0,0,0,.5)}
+.btn-outline{background:rgba(0,116,242,.07);color:var(--blue-l);border:1px solid rgba(0,116,242,.45)}
+.btn-outline:hover{background:rgba(0,116,242,.16);border-color:var(--blue);transform:translateY(-2px)}
+.btn-full{width:100%}
+
+/* ═══ REVEAL ══════════════════════════════════════════════════ */
+[data-r]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+[data-r].on{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.2s}[data-d="3"]{transition-delay:.3s}
+
+/* ═══ PÁGINA / FUNDO ══════════════════════════════════════════ */
+.page{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden}
+/* grade sutil + arco de luz azul (assinatura Ped Talks) */
+.page::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 85% 70% at 40% 35%,#000 25%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 85% 70% at 40% 35%,#000 25%,transparent 100%);pointer-events:none}
+.page::after{content:'';position:absolute;top:-380px;left:50%;transform:translateX(-50%);width:170%;height:520px;border-radius:50%;background:radial-gradient(ellipse at 50% 100%,rgba(0,116,242,.5) 0%,rgba(0,116,242,.12) 42%,transparent 68%);filter:blur(10px);pointer-events:none}
+.wm{position:absolute;left:-3vw;bottom:-6vw;font-size:31vw;font-weight:900;letter-spacing:-1.6vw;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(90,166,255,.075);pointer-events:none;user-select:none;z-index:0}
+
+/* ═══ TOPO ════════════════════════════════════════════════════ */
+.top{position:relative;z-index:5;padding:22px 24px 0}
+.top-row{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{height:34px;width:auto}
+.top-wpp{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);font-size:13.5px;font-weight:600;color:var(--gl);transition:border-color .2s,background .2s,color .2s}
+.top-wpp:hover{border-color:rgba(37,211,102,.5);background:rgba(37,211,102,.07);color:var(--white)}
+.top-wpp b{font-weight:600;color:var(--gm)}
+.wpp-dot{width:8px;height:8px;border-radius:50%;background:#25D366;animation:pg 2.2s infinite;flex-shrink:0}
+@keyframes pg{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}60%{box-shadow:0 0 0 7px rgba(37,211,102,0)}}
+
+/* ═══ HERO ════════════════════════════════════════════════════ */
+#hero{position:relative;z-index:1;flex:1;display:flex;align-items:center;padding:34px 24px 72px}
+.hero-in{width:100%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr) 440px;grid-template-areas:"copy copy form" "mock inside form";column-gap:40px;row-gap:18px;align-items:center}
+
+/* texto */
+.copy{grid-area:copy;max-width:690px}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:999px;border:1px solid rgba(0,116,242,.38);background:rgba(0,116,242,.1);font-size:12px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--blue-l);margin-bottom:22px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}
+h1{font-size:clamp(34px,3.7vw,52px);font-weight:800;letter-spacing:-1px;line-height:1.07}
+h1 .grad{background:linear-gradient(100deg,#2A8CFF 0%,#8DC4FF 55%,#2A8CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .tep{color:var(--blue);font-weight:900;text-shadow:0 0 50px rgba(0,116,242,.45)}
+.lead{position:relative;margin-top:20px;padding-left:18px;max-width:600px;font-size:17px;color:var(--gl);line-height:1.62}
+.lead::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:3px;background:linear-gradient(var(--blue),rgba(0,116,242,.15))}
+.lead strong{color:var(--white);font-weight:700}
+
+/* mockup 3D do e-book */
+.mock{grid-area:mock;position:relative;display:flex;justify-content:center;padding:18px 48px 46px;--bw:clamp(184px,25vh,236px);--bt:calc(var(--bw) * .085)}
+.book-glow{position:absolute;left:50%;top:44%;width:calc(var(--bw) * 1.9);height:calc(var(--bw) * 1.9);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,116,242,.42),rgba(0,116,242,.1) 60%,transparent);filter:blur(18px);pointer-events:none}
+.book-float{position:relative;z-index:1;perspective:1500px;animation:bob 6.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.book{--ry:26deg;--rx:4deg;position:relative;width:var(--bw);height:calc(var(--bw) * 16 / 9);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.b-face{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.b-front{inset:0;transform:translateZ(calc(var(--bt) / 2));border-radius:2px 7px 7px 2px;overflow:hidden;background:#06122a;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.b-front img{width:100%;height:100%;object-fit:cover}
+/* dobra da capa dura + brilho que acompanha o mouse */
+.b-front::before{content:'';position:absolute;inset:0 auto 0 0;width:10%;z-index:2;background:linear-gradient(90deg,rgba(255,255,255,.2) 0,rgba(255,255,255,.04) 16%,rgba(0,0,0,.5) 30%,rgba(255,255,255,.1) 44%,transparent 100%)}
+.b-front::after{content:'';position:absolute;inset:-10% -60%;z-index:3;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.13) 48%,rgba(255,255,255,.02) 56%,transparent 62%);transform:translateX(var(--sx,0%));transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.b-spine{top:0;left:calc(var(--bt) / -2);width:var(--bt);height:100%;transform:rotateY(-90deg);background:linear-gradient(90deg,#020b1c,#0a3a80 46%,#05224d);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.b-spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:calc(var(--bt) * .44);font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,.82);white-space:nowrap}
+.b-spine span em{font-style:normal;color:var(--blue-l)}
+.b-pages{top:1.4%;height:97.2%;left:calc(var(--bw) - var(--bt) / 2 - 4px);width:calc(var(--bt) - 4px);transform:rotateY(90deg);background:repeating-linear-gradient(90deg,#eef0f4 0 1px,#c9ced8 1px 2px)}
+.b-back{inset:0;transform:rotateY(180deg) translateZ(calc(var(--bt) / 2));border-radius:7px 2px 2px 7px;background:#05132e}
+.book-shadow{position:absolute;left:50%;bottom:22px;width:calc(var(--bw) * 1.1);height:28px;transform:translateX(-44%);background:radial-gradient(closest-side,rgba(0,0,0,.85),transparent);filter:blur(5px);animation:shd 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes shd{0%,100%{transform:translateX(-44%) scale(1);opacity:1}50%{transform:translateX(-44%) scale(.86);opacity:.7}}
+.mchip{position:absolute;z-index:3;padding:10px 14px;border-radius:14px;background:rgba(10,12,18,.86);border:1px solid var(--gbd);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 14px 40px rgba(0,0,0,.5);white-space:nowrap}
+.mchip-l{font-size:10px;color:var(--gm);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.mchip-v{font-size:17px;font-weight:900;letter-spacing:-.3px;line-height:1.2;color:var(--white)}
+.mchip-v em{font-style:normal;color:var(--blue)}
+.mchip-1{top:26px;right:-22px}
+.mchip-2{bottom:64px;left:-14px}
+
+/* conteúdo do e-book */
+.inside{grid-area:inside;align-self:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue-l);margin-bottom:14px}
+.eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--blue);border-radius:2px}
+.toc{display:flex;flex-direction:column;gap:9px}
+.toc li{display:flex;gap:13px;align-items:center;padding:11px 14px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);transition:border-color .2s,background .2s}
+.toc li:hover{border-color:rgba(0,116,242,.4);background:rgba(0,116,242,.06)}
+.toc-n{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:rgba(0,116,242,.16);color:var(--blue-l);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.toc b{display:block;font-size:15px;font-weight:700;color:var(--white);line-height:1.3}
+.toc small{display:block;font-size:13px;color:var(--gm);line-height:1.4}
+.authors{display:flex;align-items:center;gap:13px;margin-top:18px}
+.av{display:flex;flex-shrink:0}
+.av img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--black);box-shadow:0 0 0 1.5px rgba(0,116,242,.7)}
+.av img+img{margin-left:-11px}
+.authors p{font-size:13px;color:var(--gm);line-height:1.45}
+.authors b{color:var(--gl);font-weight:700}
+
+/* ═══ FORMULÁRIO ══════════════════════════════════════════════ */
+.fbox{grid-area:form;align-self:center;position:relative;margin-left:16px;padding:32px 30px 26px;border-radius:26px;border:1px solid transparent;background:var(--card) padding-box,var(--card-bd) border-box;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 90px rgba(0,116,242,.15);scroll-margin-top:16px}
+.fbox::before{content:'';position:absolute;top:-1px;left:16%;right:16%;height:1px;background:linear-gradient(90deg,transparent,#9ccbff,transparent)}
+.fbox.shake{animation:shake .45s}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+.fc-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;background:rgba(0,116,242,.14);border:1px solid rgba(0,116,242,.35);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue-l);margin-bottom:14px}
+.fc-tag svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fbox h2{font-size:26px;font-weight:800;letter-spacing:-.6px;line-height:1.15;margin-bottom:8px}
+.fc-sub{font-size:14.5px;color:var(--gl);line-height:1.55}
+.fc-sub strong{color:var(--white);font-weight:600}
+
+.prog{display:flex;align-items:center;gap:12px;margin:18px 0 20px}
+.prog-bar{flex:1;height:5px;border-radius:5px;background:rgba(255,255,255,.08);overflow:hidden}
+.prog-bar span{display:block;height:100%;width:0;border-radius:5px;background:linear-gradient(90deg,var(--blue),var(--blue-l));box-shadow:0 0 12px rgba(0,116,242,.7);transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.prog-txt{font-size:12px;font-weight:600;color:var(--gm);white-space:nowrap;font-variant-numeric:tabular-nums;transition:color .2s}
+.prog.full .prog-txt{color:var(--blue-l)}
+
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--gl);margin-bottom:7px}
+.ctrl{position:relative}
+.ctrl .ic{position:absolute;left:16px;top:50%;width:18px;height:18px;transform:translateY(-50%);stroke:var(--gm);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;transition:stroke .2s}
+.ctrl input,.ctrl select{width:100%;height:52px;padding:0 44px 0 46px;border-radius:14px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.04);color:var(--white);font:500 15.5px/1 var(--font);caret-color:var(--blue-l);outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s,background .2s}
+.ctrl select{padding-right:70px;cursor:pointer}
+.ctrl select:invalid{color:#666a74}
+.ctrl option{background:#0e1016;color:var(--white)}
+.ctrl input::placeholder{color:#5c6069}
+.ctrl input:hover,.ctrl select:hover{border-color:rgba(255,255,255,.22)}
+.ctrl input:focus,.ctrl select:focus{border-color:var(--blue);background:rgba(0,116,242,.07);box-shadow:0 0 0 4px rgba(0,116,242,.18)}
+.ctrl:focus-within .ic{stroke:var(--blue-l)}
+/* autofill do navegador no tema escuro */
+.ctrl input:-webkit-autofill{-webkit-text-fill-color:var(--white);box-shadow:0 0 0 1000px #0c1424 inset;transition:background-color 9999s}
+.ctrl .chev{position:absolute;right:16px;top:50%;width:18px;height:18px;transform:translateY(-50%);stroke:var(--gl);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.ctrl .ok{position:absolute;right:15px;top:50%;width:20px;height:20px;transform:translateY(-50%) scale(.3);opacity:0;pointer-events:none;transition:opacity .25s,transform .35s cubic-bezier(.2,.9,.3,1.4)}
+.ctrl .chev+.ok{right:42px}
+.field.is-ok .ok{opacity:1;transform:translateY(-50%) scale(1)}
+.field.is-err input,.field.is-err select{border-color:var(--red);box-shadow:0 0 0 4px rgba(255,107,127,.13)}
+.field.is-err .ic{stroke:var(--red)}
+.err{display:none;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#ff8d9d;margin-top:7px}
+.err::before{content:'!';flex-shrink:0;width:15px;height:15px;border-radius:50%;background:rgba(255,107,127,.18);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.field.is-err .err{display:flex}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.btn-send{position:relative;overflow:hidden;height:58px;margin-top:8px;font-size:16.5px}
+.btn-send::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+.btn-send svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn-send:hover svg{transform:translateX(4px)}
+.btn-send .bt-load,.btn-send .spin{display:none}
+.btn-send .spin{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-send.loading{cursor:wait;transform:none}
+.btn-send.loading .bt-l,.btn-send.loading svg{display:none}
+.btn-send.loading .bt-load{display:inline}
+.btn-send.loading .spin{display:block}
+.fc-err{font-size:13px;font-weight:500;color:#ff8d9d;text-align:center}
+.fc-err:not(:empty){margin-top:12px}
+.fc-safe{display:flex;gap:9px;align-items:flex-start;margin-top:16px;font-size:12px;color:var(--gm);line-height:1.5}
+.fc-safe svg{flex-shrink:0;width:15px;height:15px;margin-top:1px;stroke:var(--gm);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* estado depois de enviar */
+.done{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 4px 6px}
+.done[hidden]{display:none}
+.done-ic{width:64px;height:64px;border-radius:50%;margin-bottom:18px;display:flex;align-items:center;justify-content:center;background:rgba(0,116,242,.14);border:1px solid rgba(0,116,242,.45);box-shadow:0 0 40px rgba(0,116,242,.3)}
+.done-ic svg{width:30px;height:30px;stroke:var(--blue-l);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.done h2{margin-bottom:10px}
+.done p{font-size:14.5px;color:var(--gl);line-height:1.6;margin-bottom:24px}
+.done .btn{white-space:normal;padding:15px 20px}
+.done .btn svg{width:19px;height:19px;fill:currentColor}
+
+/* ═══ RODAPÉ ══════════════════════════════════════════════════ */
+.foot{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.08);background:rgba(7,8,11,.85);padding:30px 24px}
+.foot-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-logo{height:30px;width:auto}
+.help{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.help-ic{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3)}
+.help-ic svg{width:20px;height:20px;fill:#25D366}
+.help-t b{display:block;font-size:15px;font-weight:700}
+.help-t span{font-size:13.5px;color:var(--gm)}
+.help .btn{padding:12px 22px;font-size:14px}
+.help .btn svg{width:17px;height:17px;fill:currentColor}
+.foot-bot{max-width:1200px;margin:22px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:12.5px;color:var(--gm)}
+
+/* ═══ POP-UP DE SUCESSO ═══════════════════════════════════════ */
+.modal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal[hidden]{display:none}
+.m-back{position:absolute;inset:0;background:rgba(2,3,6,.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:fade .3s ease}
+.m-card{position:relative;width:100%;max-width:440px;max-height:calc(100vh - 40px);overflow-y:auto;padding:42px 30px 22px;border-radius:28px;text-align:center;border:1px solid transparent;background:var(--card) padding-box,var(--card-bd) border-box;box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 100px rgba(0,116,242,.25);animation:pop .55s cubic-bezier(.2,.9,.25,1.15);outline:none}
+.modal.closing .m-back{animation:fade .22s ease reverse forwards}
+.modal.closing .m-card{animation:out .22s ease forwards}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(26px) scale(.93)}to{opacity:1;transform:none}}
+@keyframes out{to{opacity:0;transform:translateY(14px) scale(.97)}}
+.m-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--gbd);background:rgba(255,255,255,.05);color:var(--gl);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.m-x:hover{background:rgba(255,255,255,.12);color:var(--white)}
+.m-x svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.m-check{position:relative;width:86px;height:86px;margin:0 auto 22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#3d9bff,#005fcf);box-shadow:0 0 0 10px rgba(0,116,242,.13),0 0 0 22px rgba(0,116,242,.05),0 0 56px rgba(0,116,242,.6)}
+.m-check svg{width:42px;height:42px;fill:none;stroke:#fff;stroke-width:4.2;stroke-linecap:round;stroke-linejoin:round}
+.m-check path{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s .35s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.m-burst{position:absolute;left:50%;top:85px;width:0;height:0;pointer-events:none}
+.m-burst i{position:absolute;left:0;top:0;width:var(--s);height:var(--s);border-radius:var(--br);background:var(--c);opacity:0;animation:burst 1.15s cubic-bezier(.15,.7,.3,1) forwards;animation-delay:var(--dl)}
+@keyframes burst{0%{opacity:1;transform:translate(-50%,-50%) scale(.3)}75%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r)) scale(1)}}
+.m-card h2{font-size:32px;font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:10px}
+.m-card h2 span{color:var(--blue-l)}
+.m-desc{font-size:16px;color:var(--gl);line-height:1.6;max-width:330px;margin:0 auto}
+.m-desc strong{color:var(--white)}
+.m-tip{font-size:12.5px;color:var(--gm);margin-top:8px}
+.m-box{margin:24px 0 6px;padding:20px 18px;border-radius:18px;background:rgba(0,116,242,.08);border:1px solid rgba(0,116,242,.26)}
+.m-box p{font-size:14.5px;color:var(--gl);line-height:1.5;margin-bottom:14px}
+.m-box p strong{color:var(--white)}
+.m-box .btn{white-space:normal;padding:15px 20px}
+.m-box .btn svg{width:19px;height:19px;fill:currentColor}
+.m-close{margin-top:8px;background:none;border:none;color:var(--gm);font:500 14px var(--font);cursor:pointer;padding:8px 16px;border-radius:999px;transition:color .2s}
+.m-close:hover{color:var(--white)}
+
+/* ═══ BARRA FIXA MOBILE ═══════════════════════════════════════ */
+#sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:280;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(4,4,5,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.1);transform:translateY(130%);transition:transform .3s ease}
+#sticky.on{transform:none}
+#sticky .btn{width:100%;padding:15px 20px;font-size:15.5px}
+
+/* ═══ RESPONSIVO ══════════════════════════════════════════════ */
+@media (max-width:1180px){
+  .hero-in{grid-template-columns:auto minmax(0,1fr) 410px;column-gap:30px}
+  .fbox{margin-left:6px}
+}
+/* tablet: livro + conteúdo lado a lado, formulário embaixo */
+@media (max-width:1040px){
+  #hero{padding:30px 24px 64px}
+  .hero-in{max-width:720px;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"copy copy" "mock inside" "form form";row-gap:22px}
+  .copy{max-width:none}
+  .fbox{margin:14px auto 0;width:100%;max-width:560px}
+  #sticky{display:block}
+  #sticky .btn{display:flex;max-width:560px;margin:0 auto}
+  body{padding-bottom:80px}
+}
+/* celular: uma coluna — texto, livro, formulário, conteúdo */
+@media (max-width:680px){
+  #hero{padding:22px 16px 48px}
+  .top{padding:16px 16px 0}
+  .logo{height:30px}
+  .top-wpp{padding:8px 13px;font-size:13px}
+  .top-wpp b{display:none}
+  .hero-in{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "mock" "form" "inside";row-gap:10px}
+  .copy{text-align:center}
+  .badge{font-size:11px;padding:6px 13px;margin-bottom:18px}
+  h1{font-size:clamp(29px,8.2vw,36px);letter-spacing:-.8px}
+  .lead{font-size:15.5px;margin:16px auto 0;padding:14px 0 0}
+  .lead::before{left:50%;top:0;bottom:auto;width:40px;height:3px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+  .mock{--bw:158px;padding:22px 0 40px}
+  .mchip{padding:8px 11px;border-radius:12px}
+  .mchip-v{font-size:14.5px}
+  .mchip-1{top:22px;right:calc(50% - 168px)}
+  .mchip-2{bottom:62px;left:calc(50% - 168px)}
+  .fbox{margin:0;padding:26px 20px 22px;border-radius:22px}
+  .fbox h2{font-size:23px}
+  .inside{margin-top:26px}
+  .foot{padding:26px 16px}
+  .foot-in{flex-direction:column;align-items:flex-start}
+  .help .btn{width:100%}
+}
+@media (max-width:370px){
+  .mchip-1{right:6px}.mchip-2{left:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  [data-r]{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .book-float,.book-shadow,.btn-send::after,.wpp-dot{animation:none}
+  .m-card,.m-back,.m-check path{animation:none}
+  .m-check path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="wm" aria-hidden="true">TEP</div>
+
+  <!-- ═══ TOPO ═══ -->
+  <header class="top">
+    <div class="top-row">
+      <img src="img/logo-pedtalks.png" alt="Ped Talks" class="logo" width="120" height="34">
+      <a href="#" data-link="wpp" class="top-wpp"><span class="wpp-dot"></span><b>Dúvidas?</b> Fale no WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <main id="hero">
+    <div class="hero-in">
+
+      <div class="copy" data-r>
+        <span class="badge"><span class="badge-dot"></span>Seu primeiro passo rumo ao TEP 2027</span>
+        <h1>Ganhe um <span class="grad">e-book gratuito</span> com os primeiros passos da sua preparação para o <span class="tep">TEP</span></h1>
+        <p class="lead">Esse é o seu primeiro passo para se preparar para a prova de <strong>Título de Especialista em Pediatria em 2027</strong>: entenda como tudo funciona antes de abrir o primeiro livro.</p>
+      </div>
+
+      <div class="mock" data-r data-d="1">
+        <div class="book-glow"></div>
+        <div class="book-float">
+          <div class="book" id="book">
+            <div class="b-face b-front"><img src="img/capa-ebook-tep.jpg" alt="Capa do e-book Guia do TEP, com as professoras Rebecca Azulay e Natália Dias" width="720" height="1280"></div>
+            <div class="b-face b-spine" aria-hidden="true"><span>Guia do <em>TEP</em> · Ped Talks</span></div>
+            <div class="b-face b-pages"></div>
+            <div class="b-face b-back"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="mchip mchip-1"><div class="mchip-l">Formato</div><div class="mchip-v">PDF · <em>14</em> págs</div></div>
+        <div class="mchip mchip-2"><div class="mchip-l">Investimento</div><div class="mchip-v">R$ <em>0</em></div></div>
+      </div>
+
+      <div class="inside" data-r data-d="2">
+        <span class="eyebrow">Dentro do e-book</span>
+        <ol class="toc">
+          <li><span class="toc-n">01</span><div><b>O que é o TEP</b><small>O título, quem concede e quem pode prestar</small></div></li>
+          <li><span class="toc-n">02</span><div><b>Por que ter o título</b><small>As portas que ele abre e o respaldo do RQE</small></div></li>
+          <li><span class="toc-n">03</span><div><b>Como é a prova</b><small>Formato, notas e as regras do dia</small></div></li>
+          <li><span class="toc-n">04</span><div><b>Primeiros passos</b><small>Um roteiro para começar a estudar hoje</small></div></li>
+        </ol>
+        <div class="authors">
+          <div class="av"><img src="img/rebecca.jpg" alt="" width="40" height="40"><img src="img/natalia.jpg" alt="" width="40" height="40"></div>
+          <p>Escrito por <b>Rebecca Azulay</b> e <b>Natália Dias</b>, professoras do Preparatório TEP</p>
+        </div>
+      </div>
+
+      <!-- ═══ FORMULÁRIO ═══ -->
+      <aside class="fbox" id="form-box" data-r data-d="1">
+        <form id="leadForm" novalidate>
+          <span class="fc-tag"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Receba grátis</span>
+          <h2>Receba o seu e-book agora</h2>
+          <p class="fc-sub">Preencha o formulário para receber — é rapidinho, leva menos de 1 minuto. <strong>Todos os campos são obrigatórios.</strong></p>
+
+          <div class="prog" aria-hidden="true">
+            <div class="prog-bar"><span id="progFill"></span></div>
+            <span class="prog-txt" id="progTxt">0 de 4 campos</span>
+          </div>
+
+          <div class="field">
+            <label for="f-nome">Nome completo</label>
+            <div class="ctrl">
+              <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <input id="f-nome" name="nome" type="text" autocomplete="name" autocapitalize="words" placeholder="Como você se chama?" required aria-describedby="e-nome">
+              <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#0074F2"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="err" id="e-nome" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <div class="ctrl">
+              <svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="seuemail@exemplo.com" required aria-describedby="e-email">
+              <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#0074F2"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="err" id="e-email" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="f-whats">WhatsApp com DDD</label>
+            <div class="ctrl">
+              <svg class="ic" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+              <input id="f-whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(85) 99999-9999" maxlength="16" required aria-describedby="e-whats">
+              <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#0074F2"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="err" id="e-whats" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="f-tempo">Há quanto tempo você atua na Pediatria?</label>
+            <div class="ctrl">
+              <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <select id="f-tempo" name="tempo_pediatria" required aria-describedby="e-tempo">
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option>Nenhum — ainda não atuo</option>
+                <option>Menos de 1 ano</option>
+                <option>1 ano</option>
+                <option>2 anos</option>
+                <option>3 anos</option>
+                <option>4 anos</option>
+                <option>5 anos</option>
+                <option>6 anos</option>
+                <option>7 anos</option>
+                <option>8 anos</option>
+                <option>9 anos</option>
+                <option>10 anos ou mais</option>
+              </select>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#0074F2"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="err" id="e-tempo" aria-live="polite"></p>
+          </div>
+
+          <!-- anti-spam: campo invisível que só robô preenche -->
+          <div class="hp" aria-hidden="true"><label>Empresa <input name="empresa" type="text" tabindex="-1" autocomplete="off"></label></div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-send" id="sendBtn">
+            <span class="bt-l">Quero meu e-book grátis</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="spin" aria-hidden="true"></span><span class="bt-load">Enviando…</span>
+          </button>
+          <p class="fc-err" id="sendErr" role="alert"></p>
+          <p class="fc-safe"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Seus dados estão seguros. Ao enviar, você concorda em receber o e-book e conteúdos do Ped Talks por e-mail e WhatsApp.</span></p>
+        </form>
+
+        <div class="done" id="done" hidden>
+          <div class="done-ic"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+          <h2>Seu e-book está a caminho!</h2>
+          <p>Fique de olho no seu e-mail (vale conferir o spam e a aba Promoções) e no seu WhatsApp.</p>
+          <a href="#" data-link="prep" class="btn btn-outline btn-full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.3 5.3 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>Conhecer o Preparatório TEP</a>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ═══ RODAPÉ ═══ -->
+  <footer class="foot">
+    <div class="foot-in">
+      <img src="img/logo-pedtalks.png" alt="Ped Talks" class="foot-logo" width="106" height="30">
+      <div class="help">
+        <div class="help-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.3 5.3 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg></div>
+        <div class="help-t"><b>Ficou com alguma dúvida?</b><span>Entre em contato com a gente no WhatsApp.</span></div>
+        <a href="#" data-link="wpp" class="btn btn-outline"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.3 5.3 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>(85) 99734-5004</a>
+      </div>
+    </div>
+    <div class="foot-bot">© <span id="yr">2026</span> Ped Talks · Grupo Talks. Todos os direitos reservados.</div>
+  </footer>
+</div>
+
+<!-- ═══ POP-UP DE SUCESSO ═══ -->
+<div class="modal" id="modal" hidden>
+  <div class="m-back" data-close></div>
+  <div class="m-card" role="dialog" aria-modal="true" aria-labelledby="m-title" aria-describedby="m-desc" tabindex="-1">
+    <button type="button" class="m-x" data-close aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="m-burst" id="burst"></div>
+    <div class="m-check"><svg viewBox="0 0 52 52"><path d="M14 27.5l8 8 16-17"/></svg></div>
+    <h2 id="m-title">Pronto<span id="m-name"></span>!</h2>
+    <p class="m-desc" id="m-desc">Em breve você receberá o e-book <strong>no seu e-mail</strong> ou <strong>via WhatsApp</strong>.</p>
+    <p class="m-tip">Se não aparecer na caixa de entrada, confira o spam.</p>
+    <div class="m-box">
+      <p>Para saber mais informações do nosso <strong>Preparatório TEP</strong>, clique aqui:</p>
+      <a href="#" data-link="prep" class="btn btn-primary btn-full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.3 5.3 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>Falar no WhatsApp</a>
+    </div>
+    <button type="button" class="m-close" data-close>Fechar</button>
+  </div>
+</div>
+
+<!-- ═══ BARRA FIXA MOBILE ═══ -->
+<div id="sticky"><a href="#form-box" class="btn btn-primary" id="stickyBtn">Quero meu e-book grátis</a></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ⚠️  CONFIGURAÇÃO — CONFERIR ANTES DE PUBLICAR
+   ═══════════════════════════════════════════════════════════════ */
+var CONFIG = {
+  /* URL que recebe os leads (POST com nome, email, whatsapp, tempo_pediatria
+     e UTMs). Pode ser o app da web do Google Apps Script (ver README.md) ou
+     um webhook do RD Station, Zapier, Make etc.
+     Enquanto estiver vazio, o pop-up aparece mas o lead NÃO é salvo. */
+  ENDPOINT: '',
+  /* WhatsApp da central de atendimento — o mesmo da landing do Preparatório TEP */
+  WHATSAPP: 'https://wa.me/5585997345004'
+};
+var LINKS = {
+  wpp:  CONFIG.WHATSAPP + '?text=' + encodeURIComponent('Olá! Tenho uma dúvida sobre o e-book gratuito Guia do TEP.'),
+  prep: CONFIG.WHATSAPP + '?text=' + encodeURIComponent('Olá! Acabei de pedir o e-book Guia do TEP e quero saber mais sobre o Preparatório TEP.')
+};
+
+(function () {
+  'use strict';
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* links */
+  $$('[data-link]').forEach(function (a) {
+    var u = LINKS[a.getAttribute('data-link')];
+    if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener'; }
+  });
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* reveal */
+  var els = $$('[data-r]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('on'); });
+  }
+
+  /* livro 3D acompanha o mouse (só em telas com mouse) */
+  var book = $('#book'), hero = $('#hero');
+  if (!reduce && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    hero.addEventListener('pointermove', function (e) {
+      var r = book.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+      var dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+      book.style.setProperty('--ry', (26 + dx * 22).toFixed(2) + 'deg');
+      book.style.setProperty('--rx', (4 - dy * 12).toFixed(2) + 'deg');
+      book.style.setProperty('--sx', (dx * 50).toFixed(1) + '%');
+    });
+    hero.addEventListener('pointerleave', function () {
+      ['--ry', '--rx', '--sx'].forEach(function (p) { book.style.removeProperty(p); });
+    });
+  }
+
+  /* ── formulário ─────────────────────────────────────────────── */
+  var form = $('#leadForm'), box = $('#form-box'), btn = $('#sendBtn'), sendErr = $('#sendErr');
+  var fields = $$('.field', form);
+  var fill = $('#progFill'), txt = $('#progTxt'), prog = $('.prog', form);
+
+  var RULES = {
+    nome: function (v) {
+      v = v.trim();
+      if (!v) return 'Digite o seu nome.';
+      if (v.length < 3 || v.indexOf(' ') < 0) return 'Digite o seu nome e sobrenome.';
+      return '';
+    },
+    email: function (v) {
+      v = v.trim();
+      if (!v) return 'Digite o seu e-mail.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'Confira o e-mail — parece que falta alguma coisa.';
+      return '';
+    },
+    whatsapp: function (v) {
+      var d = v.replace(/\D/g, '');
+      if (!d) return 'Digite o seu WhatsApp com DDD.';
+      if (d.length < 10) return 'Confira o número: DDD + celular, ex. (85) 99999-9999.';
+      return '';
+    },
+    tempo_pediatria: function (v) {
+      return v ? '' : 'Selecione há quanto tempo você atua na Pediatria.';
+    }
+  };
+
+  /* (85) 99999-9999 — os separadores só aparecem depois do dígito que os exige,
+     assim o backspace nunca "trava" num parêntese ou hífen */
+  function fmtPhone(v) {
+    var d = v.replace(/\D/g, '');
+    if (d.length > 11 && d.indexOf('55') === 0) d = d.slice(2);
+    d = d.slice(0, 11);
+    if (!d) return '';
+    if (d.length < 3) return '(' + d;
+    if (d.length < 7) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    if (d.length < 11) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+    return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  }
+
+  function input(f) { return $('input,select', f); }
+
+  function check(f, show) {
+    var el = input(f), msg = RULES[el.name](el.value);
+    f.classList.toggle('is-ok', !msg);
+    if (show || f.classList.contains('touched')) {
+      f.classList.toggle('is-err', !!msg);
+      $('.err', f).textContent = msg;
+      el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    }
+    return msg;
+  }
+
+  function progress() {
+    var n = fields.filter(function (f) { return f.classList.contains('is-ok'); }).length;
+    fill.style.width = (n / fields.length * 100) + '%';
+    txt.textContent = n === fields.length ? 'Tudo certo! É só enviar' : n + ' de ' + fields.length + ' campos';
+    prog.classList.toggle('full', n === fields.length);
+  }
+
+  fields.forEach(function (f) {
+    var el = input(f);
+    el.addEventListener('input', function () {
+      if (el.name === 'whatsapp') el.value = fmtPhone(el.value);
+      check(f); progress();
+    });
+    el.addEventListener('change', function () { if (el.tagName === 'SELECT') f.classList.add('touched'); check(f); progress(); });
+    el.addEventListener('blur', function () { if (el.value.trim()) f.classList.add('touched'); check(f); progress(); });
+  });
+
+  var sending = false, sent = false;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sending || sent) return;
+    var bad = null;
+    fields.forEach(function (f) { f.classList.add('touched'); if (check(f, true) && !bad) bad = f; });
+    progress();
+    if (bad) {
+      box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake');
+      input(bad).focus();
+      return;
+    }
+
+    sending = true; sendErr.textContent = '';
+    btn.classList.add('loading'); btn.disabled = true;
+
+    var data = new URLSearchParams();
+    fields.forEach(function (f) { var el = input(f); data.append(el.name, el.value.trim()); });
+    var qs = new URLSearchParams(location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { data.append(k, qs.get(k) || ''); });
+    data.append('pagina', location.href.split('#')[0]);
+    data.append('referrer', document.referrer);
+
+    /* robô preencheu o campo invisível: finge que deu certo e não envia */
+    send(form.elements.empresa.value ? null : data).then(success, failure);
+  });
+
+  function send(data) {
+    if (!data || !CONFIG.ENDPOINT) {
+      if (data) console.warn('[captura] CONFIG.ENDPOINT vazio — lead NÃO foi salvo:', Object.fromEntries(data));
+      return new Promise(function (ok) { setTimeout(ok, 700); });
+    }
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var t = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : 0;
+    /* no-cors: a resposta é opaca, mas o POST chega (funciona com Apps Script e webhooks) */
+    return fetch(CONFIG.ENDPOINT, { method: 'POST', mode: 'no-cors', body: data, signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { clearTimeout(t); return r; }, function (err) { clearTimeout(t); throw err; });
+  }
+
+  function success() {
+    sending = false; sent = true;
+    btn.classList.remove('loading');
+    var first = form.elements.nome.value.trim().split(/\s+/)[0] || '';
+    first = first.charAt(0).toUpperCase() + first.slice(1).toLowerCase();
+    $('#m-name').textContent = first ? ', ' + first : '';
+    form.hidden = true;
+    $('#done').hidden = false;
+    sticky.classList.remove('on');
+    track();
+    openModal();
+  }
+
+  function failure() {
+    sending = false;
+    btn.classList.remove('loading'); btn.disabled = false;
+    sendErr.textContent = 'Não conseguimos enviar agora. Confira a sua conexão e tente de novo.';
+  }
+
+  /* eventos para pixel / Google Tag Manager, se forem instalados na página */
+  function track() {
+    try {
+      (window.dataLayer = window.dataLayer || []).push({ event: 'lead_ebook_tep' });
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'E-book Guia do TEP' });
+    } catch (e) {}
+  }
+
+  /* ── pop-up ─────────────────────────────────────────────────── */
+  var modal = $('#modal'), card = $('.m-card', modal), lastFocus = null;
+
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.documentElement.classList.add('lock');
+    burst();
+    setTimeout(function () { card.focus({ preventScroll: true }); }, 30);
+    document.addEventListener('keydown', onKey);
+  }
+
+  function closeModal() {
+    if (modal.hidden || modal.classList.contains('closing')) return;
+    document.removeEventListener('keydown', onKey);
+    modal.classList.add('closing');
+    setTimeout(function () {
+      modal.hidden = true; modal.classList.remove('closing');
+      document.documentElement.classList.remove('lock');
+      var target = $('#done .btn');
+      (target || lastFocus || document.body).focus({ preventScroll: true });
+    }, reduce ? 0 : 220);
+  }
+
+  function onKey(e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    var f = $$('button,a[href]', card), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === card)) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  $$('[data-close]', modal).forEach(function (b) { b.addEventListener('click', closeModal); });
+
+  function burst() {
+    if (reduce) return;
+    var b = $('#burst'), colors = ['#0074F2', '#5AA6FF', '#FFFFFF', '#2A8CFF', '#9CCBFF'];
+    b.innerHTML = '';
+    for (var i = 0; i < 30; i++) {
+      var p = document.createElement('i'), a = Math.random() * Math.PI * 2, d = 80 + Math.random() * 120;
+      p.style.setProperty('--x', (Math.cos(a) * d).toFixed(1) + 'px');
+      p.style.setProperty('--y', (Math.sin(a) * d * 0.8).toFixed(1) + 'px');
+      p.style.setProperty('--r', Math.round(Math.random() * 540 - 270) + 'deg');
+      p.style.setProperty('--s', (5 + Math.random() * 5).toFixed(1) + 'px');
+      p.style.setProperty('--br', Math.random() > 0.5 ? '50%' : '2px');
+      p.style.setProperty('--c', colors[i % colors.length]);
+      p.style.setProperty('--dl', (Math.random() * 0.12 + 0.15).toFixed(2) + 's');
+      b.appendChild(p);
+    }
+  }
+
+  /* ── barra fixa no celular: aparece enquanto o formulário está fora da tela ── */
+  var sticky = $('#sticky');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      var visible = en[0].isIntersecting && en[0].intersectionRatio >= 0.15;
+      sticky.classList.toggle('on', !visible && !sent);
+    }, { threshold: [0, 0.15] }).observe(box);
+  }
+  $('#stickyBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    box.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+})();
+</script>
+</body>
+</html>
