@@ -436,7 +436,7 @@ h1 .tep{color:var(--blue);font-weight:900;text-shadow:0 0 50px rgba(0,116,242,.4
           </div>
 
           <!-- anti-spam: campo invisível que só robô preenche -->
-          <div class="hp" aria-hidden="true"><label>Empresa <input name="empresa" type="text" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hp" aria-hidden="true"><label>Deixe em branco <input name="hp_trap" type="text" tabindex="-1" autocomplete="off"></label></div>
 
           <button type="submit" class="btn btn-primary btn-full btn-send" id="sendBtn">
             <span class="bt-l">Quero meu e-book grátis</span>
@@ -560,7 +560,8 @@ var LINKS = {
     nome: function (v) {
       v = v.trim();
       if (!v) return 'Digite o seu nome.';
-      if (v.length < 3 || v.indexOf(' ') < 0) return 'Digite o seu nome e sobrenome.';
+      var w = v.split(/\s+/);
+      if (w.length < 2 || /[0-9_@]/.test(v) || w[0].replace(/[^A-Za-zÀ-ÿ]/g, '').length < 2 || w[w.length - 1].replace(/[^A-Za-zÀ-ÿ]/g, '').length < 2) return 'Digite o seu nome e sobrenome.';
       return '';
     },
     email: function (v) {
@@ -572,7 +573,7 @@ var LINKS = {
     whatsapp: function (v) {
       var d = v.replace(/\D/g, '');
       if (!d) return 'Digite o seu WhatsApp com DDD.';
-      if (d.length < 10) return 'Confira o número: DDD + celular, ex. (85) 99999-9999.';
+      if (d.length < 11 || +d.slice(0, 2) < 11 || d.charAt(2) !== '9' || /^(\d)\1+$/.test(d.slice(2))) return 'Confira o número: DDD + celular, ex. (85) 99999-9999.';
       return '';
     },
     tempo_pediatria: function (v) {
@@ -648,7 +649,7 @@ var LINKS = {
     data.append('referrer', document.referrer);
 
     /* robô preencheu o campo invisível: finge que deu certo e não envia */
-    send(form.elements.empresa.value ? null : data).then(success, failure);
+    send(form.elements.hp_trap.value ? null : data).then(success, failure);
   });
 
   function send(data) {

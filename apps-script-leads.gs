@@ -14,7 +14,15 @@ var COLUNAS = ['Data', 'Nome', 'E-mail', 'WhatsApp', 'Abrir no WhatsApp', 'Tempo
 
 function doPost(e) {
   var p = (e && e.parameter) || {};
-  if (p.empresa) return ok_();                 // campo anti-spam preenchido = robô
+  if (p.empresa || p.hp_trap) return ok_();    // campo anti-spam preenchido = robô
+
+  // só grava lead completo (a página já valida, mas o endpoint é público)
+  var tel = String(p.whatsapp || '').replace(/\D/g, '');
+  var nomeOk = String(p.nome || '').trim().split(/\s+/).length >= 2;
+  var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(p.email || '').trim());
+  if (!nomeOk || !emailOk || tel.length < 10 || !String(p.tempo_pediatria || '').trim()) {
+    return ContentService.createTextOutput(JSON.stringify({ ok: false, erro: 'dados incompletos' })).setMimeType(ContentService.MimeType.JSON);
+  }
 
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
