@@ -195,6 +195,8 @@ h1 .tep{color:var(--blue);font-weight:900;text-shadow:0 0 50px rgba(0,116,242,.4
 .btn-send .spin{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .btn-send.loading{cursor:wait;transform:none}
+.btn-send:disabled:not(.loading){opacity:.4;cursor:not-allowed;filter:grayscale(.4);transform:none;box-shadow:none}
+.btn-send:disabled::after{display:none}
 .btn-send.loading .bt-l,.btn-send.loading svg{display:none}
 .btn-send.loading .bt-load{display:inline}
 .btn-send.loading .spin{display:block}
@@ -612,6 +614,7 @@ var LINKS = {
     fill.style.width = (n / fields.length * 100) + '%';
     txt.textContent = n === fields.length ? 'Tudo certo! É só enviar' : n + ' de ' + fields.length + ' campos';
     prog.classList.toggle('full', n === fields.length);
+    if (!btn.classList.contains('loading')) btn.disabled = n !== fields.length;
   }
 
   fields.forEach(function (f) {
@@ -625,6 +628,9 @@ var LINKS = {
   });
 
   var sending = false, sent = false;
+  progress();
+  /* autopreenchimento do navegador pode preencher sem disparar eventos: reconfere */
+  setTimeout(function () { fields.forEach(function (f) { if (input(f).value) check(f); }); progress(); }, 600);
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -679,7 +685,7 @@ var LINKS = {
 
   function failure() {
     sending = false;
-    btn.classList.remove('loading'); btn.disabled = false;
+    btn.classList.remove('loading'); progress();
     sendErr.textContent = 'Não conseguimos enviar agora. Confira a sua conexão e tente de novo.';
   }
 
